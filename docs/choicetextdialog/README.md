@@ -6,7 +6,7 @@ Displays a dialog that shows a list of choices, and allows the user to select on
 
 ## Function
 
-Shows a new choice index dialog window.
+Shows a new choice text dialog window.
 
 ```Lua
 uidialogs.choicetextdialog(parent, title, message, choices, [width], [height])
