@@ -4,7 +4,7 @@ local ui = require("ui")
 local uidialogs = {}
 
 uidialogs.cancelcaption = "Cancel"
-uidialogs.conformcaption = "OK"
+uidialogs.confirmcaption = "OK"
 
 --#region dialog
 
@@ -20,7 +20,7 @@ function Dialog:constructor(title, width, height)
     buttonCancel.x = (self.width - 110)
     buttonCancel.y = (self.height - buttonCancel.height - 10)
 
-    local buttonConfirm = ui.Button(self, uidialogs.conformcaption)
+    local buttonConfirm = ui.Button(self, uidialogs.confirmcaption)
     buttonConfirm.width = 100
     buttonConfirm.x = (self.width - buttonCancel.width - buttonConfirm.width - 20)
     buttonConfirm.y = buttonCancel.y
