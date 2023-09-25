@@ -3,21 +3,24 @@ local ui = require("ui")
 -- Provides common dialog ui functions.
 local uidialogs = {}
 
+uidialogs.cancelcaption = "Cancel"
+uidialogs.conformcaption = "OK"
+
 --#region dialog
 
 -- Creates a new dialog object.
 local Dialog = Object(ui.Window)
 
--- Overrites the default window constructor.
+-- Overrides the default window constructor.
 function Dialog:constructor(title, width, height)
     super(self).constructor(self, title or self.parent.title, "fixed", width, height)
 
-    local buttonCancel = ui.Button(self, "Cancel")
+    local buttonCancel = ui.Button(self, uidialogs.cancelcaption)
     buttonCancel.width = 100
     buttonCancel.x = (self.width - 110)
     buttonCancel.y = (self.height - buttonCancel.height - 10)
 
-    local buttonConfirm = ui.Button(self, "OK")
+    local buttonConfirm = ui.Button(self, uidialogs.conformcaption)
     buttonConfirm.width = 100
     buttonConfirm.x = (self.width - buttonCancel.width - buttonConfirm.width - 20)
     buttonConfirm.y = buttonCancel.y
