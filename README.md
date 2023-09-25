@@ -3,7 +3,7 @@
 This project provides common dialog ui functions for [LuaRT](https://www.luart.org/).
 It has been designed to simplify and improve the creation of graphical user interfaces with the LuaRT ui module.
 
-![Screenshot of the Regisatrtion Form](/readme.png)
+![examples](/readme.png)
 
 [![Lua 5.4.6](https://badgen.net/badge/Lua/5.4.6/yellow)](https://github.com/lua/lua)
 [![LuaRT 1.5.2](https://badgen.net/badge/LuaRT/1.5.2/blue)](https://github.com/samyeyo/LuaRT)
