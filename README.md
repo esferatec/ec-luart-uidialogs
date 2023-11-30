@@ -29,7 +29,7 @@ More detailed descriptions and usage examples can be found in the docs folder.
 2. Copy the "uidialogs.lua" file into this folder.
 
 ```text
-[programm]
+[application]
 |
 |----ecluart
 |   |
