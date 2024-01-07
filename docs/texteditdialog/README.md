@@ -1,15 +1,15 @@
-# textentrydialog
+# texteditdialog
 
-Displays a dialog that requests a text input (single line) from the user. Returns the entered text.
+Displays a dialog that requests a text input (multiple lines) from the user. Returns the entered text
 
-![textentrydialog](/docs/textentrydialog/textentrydialog01.png)
+![texteditdialog](/docs/texteditdialog/texteditdialog01.png)
 
 ## Function
 
 Shows a new text entry dialog window.
 
 ```Lua
-uidialogs.textentrydialog(parent, title, message, text, [width], [height])
+uidialogs.texteditdialog(parent, title, message, [text], [width], [height])
 ```
 
 Parameter | Type | Description
@@ -29,12 +29,12 @@ Returns the text that the user has entered if the user has pressed OK, or nil if
 local ui = require("ui")
 local uidia = require("ecluart.uidialogs")
 
-local win = ui.Window("Text Entry Dialog", "fixed", 320, 250)
+local win = ui.Window("Text Edit Dialog", "fixed", 320, 250)
 local lbl = ui.Label(win, "", 20, 60, 280, 30)
 local btn = ui.Button(win, "Open Dialog", 130, 80)
 
 function btn:onClick()
-    local name = uidia.textentrydialog(win, "Text Entry Dialog", "Enter your first name:")
+    local name = uidia.texteditdialog(win, "Text Edit Dialog", "Enter your first name:")
 
     if name ~= nil then
         lbl.text = tostring(name)
@@ -46,4 +46,4 @@ win:center()
 ui.run(win):wait()
 ```
 
-![linklabel](/docs/textentrydialog/textentrydialog01.png)
+![linklabel](/docs/texteditdialog/texteditdialog01.png)

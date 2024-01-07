@@ -51,13 +51,13 @@ end
 
 --#region textentrydialog
 
--- Displays a dialog that requests a text input from the user. 
-function uidialogs.textentrydialog(parent, title, message, width, height)
-    local result
+--Displays a dialog that requests a text input (single line) from the user. 
+function uidialogs.textentrydialog(parent, title, message, text, width, height)
+    local result = nil
 
     local windowDialog = uidialogs.Dialog(title, width or 300, height or 125)
     local labelMessage = ui.Label(windowDialog, message, 10, 10, (windowDialog.width - 20), 30)
-    local entryValue = ui.Entry(windowDialog, "", 10, 50, (windowDialog.width - 20))
+    local entryValue = ui.Entry(windowDialog, text or "", 10, 50, (windowDialog.width - 20))
 
     parent:showmodal(windowDialog)
     entryValue:show()
@@ -83,7 +83,7 @@ end
 
 -- Displays a dialog that requests a number input from the user.
 function uidialogs.numberentrydialog(parent, title, message, width, height)
-    local result
+    local result = nil
 
     local windowDialog = uidialogs.Dialog(title, width or 300, height or 125)
     local labelMessage = ui.Label(windowDialog, message, 10, 10, (windowDialog.width - 20), 30)
@@ -119,7 +119,7 @@ end
 
 -- Displays a dialog that requests a password input from the user.
 function uidialogs.passwordentrydialog(parent, title, message, width, height)
-    local result
+    local result = nil
 
     local windowDialog = uidialogs.Dialog(title, width or 300, height or 125)
     local labelMessage = ui.Label(windowDialog, message, 10, 10, (windowDialog.width - 20), 30)
@@ -150,7 +150,7 @@ end
 
 -- Displays a dialog that shows a list of choices, and allows the user to select one.
 function uidialogs.choicetextdialog(parent, title, message, choices, width, height)
-    local result
+    local result = nil
 
     local windowDialog = uidialogs.Dialog(title, width or 300, height or 200)
     local labelMessage = ui.Label(windowDialog, message, 10, 10, (windowDialog.width - 20), 30)
@@ -180,7 +180,7 @@ end
 
 -- Displays a dialog that shows a list of choices, and allows the user to select one.
 function uidialogs.choiceindexdialog(parent, title, message, choices, width, height)
-    local result
+    local result = nil
 
     local windowDialog = uidialogs.Dialog(title, width or 300, height or 200)
     local labelMessage = ui.Label(windowDialog, message, 10, 10, (windowDialog.width - 20), 30)
@@ -196,6 +196,39 @@ function uidialogs.choiceindexdialog(parent, title, message, choices, width, hei
 
         if windowDialog:isconfirmed() then
             result = listChoices.selected and listChoices.selected.index or nil
+        else
+            result = nil
+        end
+    until not windowDialog.visible
+
+    return result
+end
+
+--#endregion
+
+--#region texteditdialog
+
+-- Displays a dialog that requests a text input (multiple lines) from the user. 
+function uidialogs.texteditdialog(parent, title, message, text, width, height)
+    local result = nil
+
+    local windowDialog = uidialogs.Dialog(title, width or 300, height or 200)
+    local labelMessage = ui.Label(windowDialog, message, 10, 10, (windowDialog.width - 20), 30)
+    local editValue = ui.Edit(windowDialog, "", 10, 50, (windowDialog.width - 20), (windowDialog.height - 40 - 60))
+    editValue.wordwrap = true
+    editValue.rtf = false
+    editValue:append(text or "")
+
+    parent:showmodal(windowDialog)
+    editValue:show()
+
+    repeat
+        ui.update()
+        windowDialog:center()
+        windowDialog:tofront()
+
+        if windowDialog:isconfirmed() then
+            result = #editValue.text > 0 and tostring(editValue.text) or nil
         else
             result = nil
         end
