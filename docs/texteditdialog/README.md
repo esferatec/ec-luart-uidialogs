@@ -6,7 +6,7 @@ Displays a dialog that requests a text input (multiple lines) from the user. Ret
 
 ## Function
 
-Shows a new text entry dialog window.
+Shows a new text edit dialog window.
 
 ```Lua
 uidialogs.texteditdialog(parent, title, message, [text], [width], [height])
