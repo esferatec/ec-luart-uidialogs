@@ -9,7 +9,7 @@ Displays a dialog that requests a text input (single line) from the user. Return
 Shows a new text entry dialog window.
 
 ```Lua
-uidialogs.textentrydialog(parent, title, message, text, [width], [height])
+uidialogs.textentrydialog(parent, title, message, [text], [width], [height])
 ```
 
 Parameter | Type | Description

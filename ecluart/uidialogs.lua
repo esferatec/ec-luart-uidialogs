@@ -12,8 +12,8 @@ uidialogs.confirmcaption = "OK"
 local Dialog = Object(ui.Window)
 
 -- Overrides the default window constructor.
-function Dialog:constructor(title, width, height)
-    super(self).constructor(self, title or self.parent.title, "fixed", width, height)
+function Dialog:constructor(parent, title, width, height)
+    super(self).constructor(self, parent, title or parent.title, "fixed", width, height)
 
     local buttonCancel = ui.Button(self, uidialogs.cancelcaption)
     buttonCancel.width = 100
@@ -42,20 +42,15 @@ function Dialog:constructor(title, width, height)
     end
 end
 
--- Initializes a new dialog instance.
-function uidialogs.Dialog(title, width, height)
-    return Dialog(title, width, height)
-end
-
 --#endregion
 
 --#region textentrydialog
 
---Displays a dialog that requests a text input (single line) from the user. 
+--Displays a dialog that requests a text input (single line) from the user.
 function uidialogs.textentrydialog(parent, title, message, text, width, height)
     local result = nil
 
-    local windowDialog = uidialogs.Dialog(title, width or 300, height or 125)
+    local windowDialog = Dialog(parent, title, width or 300, height or 125)
     local labelMessage = ui.Label(windowDialog, message, 10, 10, (windowDialog.width - 20), 30)
     local entryValue = ui.Entry(windowDialog, text or "", 10, 50, (windowDialog.width - 20))
 
@@ -82,12 +77,12 @@ end
 --#region numberentrydialog
 
 -- Displays a dialog that requests a number input from the user.
-function uidialogs.numberentrydialog(parent, title, message, width, height)
+function uidialogs.numberentrydialog(parent, title, message, value, width, height)
     local result = nil
 
-    local windowDialog = uidialogs.Dialog(title, width or 300, height or 125)
+    local windowDialog = Dialog(parent, title, width or 300, height or 125)
     local labelMessage = ui.Label(windowDialog, message, 10, 10, (windowDialog.width - 20), 30)
-    local entryValue = ui.Entry(windowDialog, "", 10, 50, (windowDialog.width - 20))
+    local entryValue = ui.Entry(windowDialog, tostring(value) or "", 10, 50, (windowDialog.width - 20))
 
     function entryValue:onChange()
         if #self.text > 0 and tonumber(self.text) == nil then
@@ -121,7 +116,7 @@ end
 function uidialogs.passwordentrydialog(parent, title, message, width, height)
     local result = nil
 
-    local windowDialog = uidialogs.Dialog(title, width or 300, height or 125)
+    local windowDialog = Dialog(parent, title, width or 300, height or 125)
     local labelMessage = ui.Label(windowDialog, message, 10, 10, (windowDialog.width - 20), 30)
     local entryValue = ui.Entry(windowDialog, "", 10, 50, (windowDialog.width - 20))
     entryValue.masked = true
@@ -152,7 +147,7 @@ end
 function uidialogs.choicetextdialog(parent, title, message, choices, width, height)
     local result = nil
 
-    local windowDialog = uidialogs.Dialog(title, width or 300, height or 200)
+    local windowDialog = Dialog(parent, title, width or 300, height or 200)
     local labelMessage = ui.Label(windowDialog, message, 10, 10, (windowDialog.width - 20), 30)
     local listChoices = ui.List(windowDialog, choices, 10, 50, (windowDialog.width - 20), (windowDialog.height - 40 - 60))
 
@@ -182,7 +177,7 @@ end
 function uidialogs.choiceindexdialog(parent, title, message, choices, width, height)
     local result = nil
 
-    local windowDialog = uidialogs.Dialog(title, width or 300, height or 200)
+    local windowDialog = Dialog(parent, title, width or 300, height or 200)
     local labelMessage = ui.Label(windowDialog, message, 10, 10, (windowDialog.width - 20), 30)
     local listChoices = ui.List(windowDialog, choices, 10, 50, (windowDialog.width - 20), (windowDialog.height - 40 - 60))
 
@@ -208,11 +203,11 @@ end
 
 --#region texteditdialog
 
--- Displays a dialog that requests a text input (multiple lines) from the user. 
+-- Displays a dialog that requests a text input (multiple lines) from the user.
 function uidialogs.texteditdialog(parent, title, message, text, width, height)
     local result = nil
 
-    local windowDialog = uidialogs.Dialog(title, width or 300, height or 200)
+    local windowDialog = Dialog(parent, title, width or 300, height or 200)
     local labelMessage = ui.Label(windowDialog, message, 10, 10, (windowDialog.width - 20), 30)
     local editValue = ui.Edit(windowDialog, "", 10, 50, (windowDialog.width - 20), (windowDialog.height - 40 - 60))
     editValue.wordwrap = true

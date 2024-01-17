@@ -6,7 +6,7 @@ local lbl = ui.Label(win, "", 20, 60, 280, 30)
 local btn = ui.Button(win, "Open Dialog", 130, 80)
 
 function btn:onClick()
-    local number = uidia.numberentrydialog(win, "Number Entry Dialog", "Enter your zip code:")
+    local number = uidia.numberentrydialog(win, "Number Entry Dialog", "Enter your zip code:", 123456789)
 
     if number ~= nil then
         lbl.text = tostring(number)

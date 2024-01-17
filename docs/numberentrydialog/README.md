@@ -9,7 +9,7 @@ Displays a dialog that requests a number input from the user. Returns the entere
 Shows a new number entry dialog window.
 
 ```Lua
-uidialogs.numberentrydialog(parent, title, message, [width], [height])
+uidialogs.numberentrydialog(parent, title, message, [value], [width], [height])
 ```
 
 Parameter | Type | Description
@@ -17,6 +17,7 @@ Parameter | Type | Description
 parent | object | Sets the parent window.
 title | string | Sets title of the dialog.
 message | string | Sets message to show on the dialog.
+value | string | Sets content value to show on the dialog.
 width | number | Sets the width of the dialog. The default is 300.
 height | number | Sets the height of the dialog. The default is 125.
 
