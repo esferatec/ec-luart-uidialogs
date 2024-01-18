@@ -52,6 +52,7 @@ function uidialogs.textentrydialog(parent, title, message, text, width, height)
 
     local windowDialog = Dialog(parent, title, width or 300, height or 125)
     local labelMessage = ui.Label(windowDialog, message, 10, 10, (windowDialog.width - 20), 30)
+    labelMessage.textalign = "center"
     local entryValue = ui.Entry(windowDialog, text or "", 10, 50, (windowDialog.width - 20))
 
     parent:showmodal(windowDialog)
@@ -82,6 +83,7 @@ function uidialogs.numberentrydialog(parent, title, message, value, width, heigh
 
     local windowDialog = Dialog(parent, title, width or 300, height or 125)
     local labelMessage = ui.Label(windowDialog, message, 10, 10, (windowDialog.width - 20), 30)
+    labelMessage.textalign = "center"
     local entryValue = ui.Entry(windowDialog, tostring(value) or "", 10, 50, (windowDialog.width - 20))
 
     function entryValue:onChange()
@@ -118,6 +120,7 @@ function uidialogs.passwordentrydialog(parent, title, message, width, height)
 
     local windowDialog = Dialog(parent, title, width or 300, height or 125)
     local labelMessage = ui.Label(windowDialog, message, 10, 10, (windowDialog.width - 20), 30)
+    labelMessage.textalign = "center"
     local entryValue = ui.Entry(windowDialog, "", 10, 50, (windowDialog.width - 20))
     entryValue.masked = true
 
@@ -149,6 +152,7 @@ function uidialogs.choicetextdialog(parent, title, message, choices, width, heig
 
     local windowDialog = Dialog(parent, title, width or 300, height or 200)
     local labelMessage = ui.Label(windowDialog, message, 10, 10, (windowDialog.width - 20), 30)
+    labelMessage.textalign = "center"
     local listChoices = ui.List(windowDialog, choices, 10, 50, (windowDialog.width - 20), (windowDialog.height - 40 - 60))
 
     parent:showmodal(windowDialog)
@@ -179,6 +183,7 @@ function uidialogs.choiceindexdialog(parent, title, message, choices, width, hei
 
     local windowDialog = Dialog(parent, title, width or 300, height or 200)
     local labelMessage = ui.Label(windowDialog, message, 10, 10, (windowDialog.width - 20), 30)
+    labelMessage.textalign = "center"
     local listChoices = ui.List(windowDialog, choices, 10, 50, (windowDialog.width - 20), (windowDialog.height - 40 - 60))
 
     parent:showmodal(windowDialog)
@@ -209,6 +214,7 @@ function uidialogs.texteditdialog(parent, title, message, text, width, height)
 
     local windowDialog = Dialog(parent, title, width or 300, height or 200)
     local labelMessage = ui.Label(windowDialog, message, 10, 10, (windowDialog.width - 20), 30)
+    labelMessage.textalign = "center"
     local editValue = ui.Edit(windowDialog, "", 10, 50, (windowDialog.width - 20), (windowDialog.height - 40 - 60))
     editValue.wordwrap = true
     editValue.rtf = false
