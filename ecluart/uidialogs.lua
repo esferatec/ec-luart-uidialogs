@@ -64,7 +64,11 @@ function uidialogs.textentrydialog(parent, title, message, text, width, height)
     windowDialog:tofront()
 
     if windowDialog:isconfirmed() then
-      result = #entryValue.text > 0 and tostring(entryValue.text) or nil
+      if entryValue.modified then
+        result = #entryValue.text > 0 and tostring(entryValue.text) or nil
+      else
+        result = nil
+      end
     else
       result = nil
     end
@@ -101,7 +105,11 @@ function uidialogs.numberentrydialog(parent, title, message, value, width, heigh
     windowDialog:tofront()
 
     if windowDialog:isconfirmed() then
-      result = #entryValue.text > 0 and tonumber(entryValue.text) or nil
+      if entryValue.modified then
+        result = #entryValue.text > 0 and tostring(entryValue.text) or nil
+      else
+        result = nil
+      end
     else
       result = nil
     end
@@ -133,7 +141,11 @@ function uidialogs.passwordentrydialog(parent, title, message, width, height)
     windowDialog:tofront()
 
     if windowDialog:isconfirmed() then
-      result = #entryValue.text > 0 and tostring(entryValue.text) or nil
+      if entryValue.modified then
+        result = #entryValue.text > 0 and tostring(entryValue.text) or nil
+      else
+        result = nil
+      end
     else
       result = nil
     end
@@ -229,7 +241,11 @@ function uidialogs.texteditdialog(parent, title, message, text, width, height)
     windowDialog:tofront()
 
     if windowDialog:isconfirmed() then
-      result = #editValue.text > 0 and tostring(editValue.text) or nil
+      if editValue.modified then
+        result = #editValue.text > 0 and tostring(editValue.text) or nil
+      else
+        result = nil
+      end
     else
       result = nil
     end
