@@ -21,6 +21,7 @@ The module provides the following dialog functions:
 | passwordentrydialog | Displays a dialog that requests a password input from the user. Returns the entered password. | uidialogs.lua
 | texteditdialog | Displays a dialog that requests a text input (multiple lines) from the user. Returns the entered text. | uidialogs.lua
 | textentrydialog | Displays a dialog that requests a text input (single line) from the user. Returns the entered text. | uidialogs.lua
+| calendardialog | Displays a dialog that shows a month calendar to choose a date. Returns the selected date. | uidialogs.lua
 
 More detailed descriptions and usage examples can be found in the docs folder.
 

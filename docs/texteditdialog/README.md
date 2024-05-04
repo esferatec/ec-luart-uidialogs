@@ -46,4 +46,4 @@ win:center()
 ui.run(win):wait()
 ```
 
-![linklabel](/docs/texteditdialog/texteditdialog01.png)
+![texteditdialog](/docs/texteditdialog/texteditdialog01.png)

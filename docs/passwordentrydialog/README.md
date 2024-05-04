@@ -45,4 +45,4 @@ win:center()
 ui.run(win):wait()
 ```
 
-![linklabel](/docs/passwordentrydialog/passwordentrydialog01.png)
+![passwordentrydialog](/docs/passwordentrydialog/passwordentrydialog01.png)

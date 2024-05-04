@@ -47,4 +47,4 @@ win:center()
 ui.run(win):wait()
 ```
 
-![linklabel](/docs/choicetextdialog/choicetextdialog01.png)
+![choicetextdialog](/docs/choicetextdialog/choicetextdialog01.png)

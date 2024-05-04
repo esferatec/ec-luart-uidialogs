@@ -256,4 +256,37 @@ end
 
 --#endregion
 
+--#region calenderdialog
+
+-- Displays a dialog that shows a month calendar to choose a date.
+function uidialogs.calendardialog(parent, title, message, select, width, height)
+  local result = nil
+
+  local windowDialog = Dialog(parent, title, width or 246, height or 260)
+  local labelMessage = ui.Label(windowDialog, message, 10, 10, (windowDialog.width - 20), 30)
+  labelMessage.textalign = "center"
+  local calendarMonth = ui.Calendar(windowDialog, 10, 50, (windowDialog.width - 20), (windowDialog.height - 40 - 60))
+
+  parent:showmodal(windowDialog)
+  if select then
+    calendarMonth.selected = select
+  end
+
+  repeat
+    ui.update()
+    windowDialog:center()
+    windowDialog:tofront()
+
+    if windowDialog:isconfirmed() then
+      result = calendarMonth.selected --and listChoices.selected.index or nil
+    else
+      result = nil
+    end
+  until not windowDialog.visible
+
+  return result
+end
+
+--#endregion
+
 return uidialogs
