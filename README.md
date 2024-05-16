@@ -5,7 +5,7 @@ It has been designed to simplify and improve the creation of graphical user inte
 
 ![examples](/readme.png)
 
-[![LuaRT 1.8.0](https://badgen.net/badge/LuaRT/1.7.0/blue)](https://github.com/samyeyo/LuaRT)
+[![LuaRT 1.8.0](https://badgen.net/badge/LuaRT/1.8.0/blue)](https://github.com/samyeyo/LuaRT)
 
 ## Features
 
