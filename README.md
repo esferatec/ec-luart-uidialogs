@@ -13,13 +13,13 @@ The module provides the following dialog functions:
 
 | Name | Description | Module |
 | --- | --- | --- |
+| calendardialog | Displays a dialog that shows a month calendar to choose a date. Returns the selected date. | uidialogs.lua
 | choiceindexdialog | Displays a dialog that shows a list of choices, and allows the user to select one. Returns the index of selected choice. | uidialogs.lua
 | choicetextdialog | Displays a dialog that shows a list of choices, and allows the user to select one. Returns the text of selected choice. | uidialogs.lua
 | numberentrydialog | Displays a dialog that requests a number input from the user. Returns the entered number. | uidialogs.lua
 | passwordentrydialog | Displays a dialog that requests a password input from the user. Returns the entered password. | uidialogs.lua
 | texteditdialog | Displays a dialog that requests a text input (multiple lines) from the user. Returns the entered text. | uidialogs.lua
 | textentrydialog | Displays a dialog that requests a text input (single line) from the user. Returns the entered text. | uidialogs.lua
-| calendardialog | Displays a dialog that shows a month calendar to choose a date. Returns the selected date. | uidialogs.lua
 
 More detailed descriptions and usage examples can be found in the docs folder.
 
