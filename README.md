@@ -3,21 +3,21 @@
 This project provides common dialog ui functions for [LuaRT](https://www.luart.org/).
 It has been designed to simplify and improve the creation of graphical user interfaces with the LuaRT ui module.
 
-[![LuaRT 2.0.0](https://badgen.net/badge/LuaRT/2.0.0/blue)](https://github.com/samyeyo/LuaRT)
+[![LuaRT 2.1.0](https://badgen.net/badge/LuaRT/2.1.0/blue)](https://github.com/samyeyo/LuaRT)
 
 ## Features
 
 The module provides the following dialog functions:
 
-| Name | Description | Module |
-| --- | --- | --- |
-| [calendardialog](docs/calendardialog/README.md) | Displays a dialog that shows a month calendar to choose a date. Returns the selected date. | uidialogs.lua
-| [choiceindexdialog](docs/choiceindexdialog/README.md) | Displays a dialog that shows a list of choices, and allows the user to select one. Returns the index of selected choice. | uidialogs.lua
-| [choicetextdialog](docs/choicetextdialog/README.md) | Displays a dialog that shows a list of choices, and allows the user to select one. Returns the text of selected choice. | uidialogs.lua
-| [numberentrydialog](docs/numberentrydialog/README.md) | Displays a dialog that requests a number input from the user. Returns the entered number. | uidialogs.lua
-| [passwordentrydialog](docs/passwordentrydialog/README.md) | Displays a dialog that requests a password input from the user. Returns the entered password. | uidialogs.lua
-| [texteditdialog](docs/texteditdialog/README.md) | Displays a dialog that requests a text input (multiple lines) from the user. Returns the entered text. | uidialogs.lua
-| [textentrydialog](docs/textentrydialog/README.md) | Displays a dialog that requests a text input (single line) from the user. Returns the entered text. | uidialogs.lua
+| Name | Description |
+| --- | --- |
+| [calendardialog](docs/calendardialog/README.md) | Displays a dialog that shows a month calendar to choose a date. Returns the selected date. |
+| [choiceindexdialog](docs/choiceindexdialog/README.md) | Displays a dialog that shows a list of choices, and allows the user to select one. Returns the index of selected choice. |
+| [choicetextdialog](docs/choicetextdialog/README.md) | Displays a dialog that shows a list of choices, and allows the user to select one. Returns the text of selected choice. |
+| [numberentrydialog](docs/numberentrydialog/README.md) | Displays a dialog that requests a number input from the user. Returns the entered number. |
+| [passwordentrydialog](docs/passwordentrydialog/README.md) | Displays a dialog that requests a password input from the user. Returns the entered password. |
+| [texteditdialog](docs/texteditdialog/README.md) | Displays a dialog that requests a text input (multiple lines) from the user. Returns the entered text. |
+| [textentrydialog](docs/textentrydialog/README.md) | Displays a dialog that requests a text input (single line) from the user. Returns the entered text. |
 
 More detailed descriptions and usage examples can be found in the docs folder.
 

@@ -14,5 +14,6 @@ function btn:onClick()
 end
 
 btn:center()
+win:show()
 win:center()
-ui.run(win):wait()
+waitall()
